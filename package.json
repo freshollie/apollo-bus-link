@@ -1,0 +1,87 @@
+{
+  "name": "apollo-messagebus-link",
+  "version": "0.1.0",
+  "main": "./dist/cjs/index.js",
+  "exports": {
+    "core": {
+      "import": "./dist/cjs/core/index.js",
+      "require": "./dist/esm/core/index.js"
+    },
+    "electron": {
+      "import": "./dist/cjs/electron.js",
+      "require": "./dist/esm/electron.js"
+    },
+    "webworker": {
+      "import": "./dist/cjs/webworker.js",
+      "require": "./dist/esm/webworker.js"
+    }
+  },
+  "keywords": [
+    "apollo",
+    "link",
+    "electron",
+    "webworker",
+    "message",
+    "bus"
+  ],
+  "files": [
+    "dist/esm",
+    "dist/cjs"
+  ],
+  "typings": "./dist/dist/index.d.ts",
+  "repository": "https://github.com/freshollie/apollo-messagebus-link",
+  "author": "Oliver Bell <freshollie@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json tsconfig.cjs.build.json",
+    "test": "jest",
+    "fmt": "prettier --write '**/*.ts'",
+    "fmt:check": "prettier -l '**/*.ts'",
+    "lint": "eslint --ext .ts '**/*.ts'",
+    "postinstallDev": "yarn build && husky install",
+    "prepack": "yarn build"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.5.5",
+    "@graphql-tools/schema": "^8.3.1",
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "electron": "^16.0.2",
+    "electron-mock-ipc": "^0.3.11",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb": "^19.0.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-node": "^0.3.6",
+    "eslint-plugin-airbnb-base": "^0.0.1-security",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
+    "graphql": "^16.0.1",
+    "graphql-tag": "^2.12.6",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "jsdom-worker": "^0.2.1",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.0",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2",
+    "workerloader-jest-transformer": "^0.0.5"
+  },
+  "peerDependencies": {
+    "@apollo/client": "^3",
+    "graphql": ">=14"
+  },
+  "packageManager": "yarn@3.1.1",
+  "dependencies": {
+    "iterall": "^1.3.0",
+    "serialize-error": "^8.1.0"
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
