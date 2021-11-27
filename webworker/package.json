@@ -1,0 +1,6 @@
+{
+  "internal": true,
+  "main": "./dist/cjs/webworker.js",
+  "module": "./dist/esm/webworker.js",
+  "typings": "./dist/cjs/webworker.d.ts"
+}
