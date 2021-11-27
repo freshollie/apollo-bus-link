@@ -1,7 +1,7 @@
 import { ApolloClient, gql, InMemoryCache } from "@apollo/client/core";
 import createIPCMock from "electron-mock-ipc";
 import {
-  createElectronMessageBusLink,
+  createElectronBusLink,
   createBusLinkBackend,
   electronBus,
 } from "../../src";
@@ -15,7 +15,7 @@ const backend = createBusLinkBackend({
 });
 backend.listen();
 
-const link = createElectronMessageBusLink<BackendArgs>(mockIpc.ipcRenderer);
+const link = createElectronBusLink<BackendArgs>(mockIpc.ipcRenderer);
 
 describe("When used in electron", () => {
   it("should execute apollo queries", async () => {
