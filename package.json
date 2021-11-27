@@ -1,7 +1,6 @@
 {
   "name": "apollo-bus-link",
   "version": "0.2.3",
-  "main": "./dist/cjs/index.js",
   "exports": {
     ".": {
       "types": "./dist/cjs/index.d.ts",
@@ -24,6 +23,7 @@
       "require": "./dist/cjs/webworker.js"
     }
   },
+  "main": "./dist/cjs/index.js",
   "keywords": [
     "apollo",
     "link",
