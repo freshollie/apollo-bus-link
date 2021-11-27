@@ -1,6 +1,6 @@
 {
   "name": "apollo-bus-link",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./dist/cjs/index.js",
   "exports": {
     "core": {
@@ -25,8 +25,8 @@
     "bus"
   ],
   "files": [
-    "dist/esm",
-    "dist/cjs"
+    "dist/esm/**/*",
+    "dist/cjs/**/*"
   ],
   "typings": "./dist/dist/index.d.ts",
   "repository": "https://github.com/freshollie/apollo-messagebus-link",
