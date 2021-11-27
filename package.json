@@ -1,6 +1,7 @@
 {
   "name": "apollo-bus-link",
   "version": "0.2.3",
+  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/cjs/index.d.ts",

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   preset: "ts-jest",
   resetMocks: true,
   testPathIgnorePatterns: ["/node_modules/", "/dist/"],
