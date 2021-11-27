@@ -28,8 +28,7 @@
     "dist/esm/**/*",
     "dist/cjs/**/*"
   ],
-  "typings": "./dist/dist/index.d.ts",
-  "repository": "https://github.com/freshollie/apollo-messagebus-link",
+  "repository": "https://github.com/freshollie/apollo-bus-link",
   "author": "Oliver Bell <freshollie@gmail.com>",
   "license": "MIT",
   "scripts": {
