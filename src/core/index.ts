@@ -1,3 +1,3 @@
-export { default as MessageBusLink } from "./MessageBusLink";
-export * from "./MessageBusLinkBackend";
+export { default as BusLink } from "./BusLink";
+export * from "./BusLinkBackend";
 export * from "./SchemaExecutor";

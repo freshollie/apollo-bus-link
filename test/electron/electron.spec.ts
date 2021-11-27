@@ -2,14 +2,14 @@ import { ApolloClient, gql, InMemoryCache } from "@apollo/client/core";
 import createIPCMock from "electron-mock-ipc";
 import {
   createElectronMessageBusLink,
-  createMessageBusLinkBackend,
+  createBusLinkBackend,
   electronBus,
 } from "../../src";
 import { BackendArgs, createTestExecutor } from "../testSchema";
 
 const mockIpc = createIPCMock();
 
-const backend = createMessageBusLinkBackend({
+const backend = createBusLinkBackend({
   registerBus: electronBus(mockIpc.ipcMain),
   createExecutor: createTestExecutor,
 });

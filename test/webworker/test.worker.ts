@@ -1,9 +1,9 @@
 // EXECUTES IN A WEB WORKER
 /* eslint-disable no-restricted-globals */
-import { createMessageBusLinkBackend, webWorkerBus } from "../../src";
+import { createBusLinkBackend, webWorkerBus } from "../../src";
 import { createTestExecutor } from "../testSchema";
 
-const backend = createMessageBusLinkBackend({
+const backend = createBusLinkBackend({
   registerBus: webWorkerBus(self),
   createExecutor: createTestExecutor,
 });

@@ -1,5 +1,5 @@
-import MessageBusLink from "./core/MessageBusLink";
-import { RegisterBusFunction } from "./core/MessageBusLinkBackend";
+import BusLink from "./core/BusLink";
+import { RegisterBusFunction } from "./core/BusLinkBackend";
 import { DefaultInitArgs } from "./types";
 
 export const webWorkerBus =
@@ -12,10 +12,10 @@ export const webWorkerBus =
       request(event.data, (response) => workerSelf.postMessage(response));
   };
 
-export const createMessageBusWebWorkerLink = <A = DefaultInitArgs>(
+export const createBusWebWorkerLink = <A = DefaultInitArgs>(
   worker: Worker
-): MessageBusLink<A> =>
-  new MessageBusLink({
+): BusLink<A> =>
+  new BusLink({
     requestHandler: (request) => worker.postMessage(request),
     registerResponseHandler: (handler) => {
       // eslint-disable-next-line no-param-reassign

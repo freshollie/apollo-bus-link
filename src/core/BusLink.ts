@@ -7,16 +7,16 @@ import {
 } from "@apollo/client/core";
 import { deserializeError } from "serialize-error";
 import {
-  MessageBusLinkRequestTypes,
+  BusLinkRequestTypes,
   DefaultInitArgs,
-  MessageBusLinkResponseTypes,
+  BusLinkResponseTypes,
   SerializableGraphQLRequest,
 } from "../types";
 
 type LinkArgs<A = DefaultInitArgs> = {
-  requestHandler: (message: MessageBusLinkRequestTypes<A>) => void;
+  requestHandler: (message: BusLinkRequestTypes<A>) => void;
   registerResponseHandler: (
-    responseHandler: (response: MessageBusLinkResponseTypes) => void
+    responseHandler: (response: BusLinkResponseTypes) => void
   ) => void;
 };
 
@@ -29,7 +29,7 @@ export default class MessengeBusLink<A = DefaultInitArgs> extends ApolloLink {
 
   private readyListener?: () => void;
 
-  public onResponse = (message: MessageBusLinkResponseTypes): void => {
+  public onResponse = (message: BusLinkResponseTypes): void => {
     if (message.type === "ready") {
       this.readyListener?.();
       return undefined;

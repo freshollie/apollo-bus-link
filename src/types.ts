@@ -25,11 +25,11 @@ export type GraphqlMessageResponse = {
   data?: FetchResult;
 };
 
-export type MessageBusLinkRequestTypes<A> =
+export type BusLinkRequestTypes<A> =
   | { type: "request"; args: GraphqlMessageRequest }
   | { type: "init"; args: A };
 
-export type MessageBusLinkResponseTypes =
+export type BusLinkResponseTypes =
   | { type: "response"; args: GraphqlMessageResponse }
   | { type: "ready" };
 

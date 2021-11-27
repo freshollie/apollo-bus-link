@@ -1319,9 +1319,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-messagebus-link@workspace:.":
+"apollo-bus-link@workspace:.":
   version: 0.0.0-use.local
-  resolution: "apollo-messagebus-link@workspace:."
+  resolution: "apollo-bus-link@workspace:."
   dependencies:
     "@apollo/client": ^3.5.5
     "@graphql-tools/schema": ^8.3.1

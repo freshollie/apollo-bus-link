@@ -1,6 +1,6 @@
 import type { IpcMain, IpcRenderer } from "electron";
-import MessageBusLink from "./core/MessageBusLink";
-import { RegisterBusFunction } from "./core/MessageBusLinkBackend";
+import BusLink from "./core/BusLink";
+import { RegisterBusFunction } from "./core/BusLinkBackend";
 import { DefaultInitArgs } from "./types";
 
 export const electronBus =
@@ -18,11 +18,11 @@ export const electronBus =
       })
     );
 
-export const createElectronMessageBusLink = <A = DefaultInitArgs>(
+export const createElectronBusLink = <A = DefaultInitArgs>(
   ipc: IpcRenderer,
   channel = "graphql"
-): MessageBusLink<A> =>
-  new MessageBusLink({
+): BusLink<A> =>
+  new BusLink({
     requestHandler: (request) => {
       ipc.send(channel, request);
     },

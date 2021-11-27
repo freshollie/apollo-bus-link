@@ -1,5 +1,5 @@
 {
-  "name": "apollo-messagebus-link",
+  "name": "apollo-bus-link",
   "version": "0.1.0",
   "main": "./dist/cjs/index.js",
   "exports": {
