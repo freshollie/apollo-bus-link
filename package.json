@@ -24,7 +24,6 @@
       "require": "./dist/cjs/webworker.js"
     }
   },
-  "types": "./dist/cjs/index.d.ts",
   "keywords": [
     "apollo",
     "link",
