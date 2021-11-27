@@ -3,22 +3,28 @@
   "version": "0.2.0",
   "main": "./dist/cjs/index.js",
   "exports": {
+    ".": {
+      "types": "./dist/cjs/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
     "core": {
-      "import": "./dist/cjs/core/index.js",
-      "require": "./dist/esm/core/index.js",
-      "typings": "./dist/cjs/core/index.d.ts"
+      "types": "./dist/cjs/core/index.d.ts",
+      "import": "./dist/esm/core/index.js",
+      "require": "./dist/cjs/core/index.js"
     },
     "electron": {
-      "import": "./dist/cjs/electron.js",
-      "require": "./dist/esm/electron.js",
-      "typings": "./dist/cjs/electron.d.ts"
+      "types": "./dist/cjs/electron.d.ts",
+      "import": "./dist/esm/electron.js",
+      "require": "./dist/cjs/electron.js"
     },
     "webworker": {
-      "import": "./dist/cjs/webworker.js",
-      "require": "./dist/esm/webworker.js",
-      "typings": "./dist/cjs/webworker.d.ts"
+      "types": "./dist/cjs/webworker.d.ts",
+      "import": "./dist/esm/webworker.js",
+      "require": "./dist/cjs/webworker.js"
     }
   },
+  "types": "./dist/cjs/index.d.ts",
   "keywords": [
     "apollo",
     "link",
@@ -40,7 +46,7 @@
     "fmt": "prettier --write '**/*.ts'",
     "fmt:check": "prettier -l '**/*.ts'",
     "lint": "eslint --ext .ts '**/*.ts'",
-    "postinstallDev": "yarn build && husky install",
+    "postinstallDev": "husky install",
     "prepack": "yarn build"
   },
   "devDependencies": {
