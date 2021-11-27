@@ -1,19 +1,22 @@
 {
   "name": "apollo-bus-link",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "./dist/cjs/index.js",
   "exports": {
     "core": {
       "import": "./dist/cjs/core/index.js",
-      "require": "./dist/esm/core/index.js"
+      "require": "./dist/esm/core/index.js",
+      "typings": "./dist/cjs/core/index.d.ts"
     },
     "electron": {
       "import": "./dist/cjs/electron.js",
-      "require": "./dist/esm/electron.js"
+      "require": "./dist/esm/electron.js",
+      "typings": "./dist/cjs/electron.d.ts"
     },
     "webworker": {
       "import": "./dist/cjs/webworker.js",
-      "require": "./dist/esm/webworker.js"
+      "require": "./dist/esm/webworker.js",
+      "typings": "./dist/cjs/webworker.d.ts"
     }
   },
   "keywords": [
