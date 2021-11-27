@@ -6,7 +6,7 @@
 </h1>
 
 [![Pipeline status](https://github.com/freshollie/apollo-bus-link/workflows/pipeline/badge.svg)](https://github.com/freshollie/apollo-bus-link/actions)
-[![Coverage](https://codecov.io/gh/freshollie/apollo-bus-link/branch/main/graph/badge.svg?token=TODO)](https://codecov.io/gh/freshollie/apollo-bus-link)
+[![Coverage](https://codecov.io/gh/freshollie/apollo-bus-link/branch/main/graph/badge.svg?token=Jh3CM5M1oI)](https://codecov.io/gh/freshollie/apollo-bus-link)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 > Your one stop for message bus apollo links
