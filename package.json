@@ -8,17 +8,17 @@
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
     },
-    "core": {
+    "./core": {
       "types": "./dist/cjs/core/index.d.ts",
       "import": "./dist/esm/core/index.js",
       "require": "./dist/cjs/core/index.js"
     },
-    "electron": {
+    "./electron": {
       "types": "./dist/cjs/electron.d.ts",
       "import": "./dist/esm/electron.js",
       "require": "./dist/cjs/electron.js"
     },
-    "webworker": {
+    "./webworker": {
       "types": "./dist/cjs/webworker.d.ts",
       "import": "./dist/esm/webworker.js",
       "require": "./dist/cjs/webworker.js"
@@ -35,6 +35,7 @@
   ],
   "files": [
     "dist/esm/**/*",
+    "!dist/esm/**/*.d.ts",
     "dist/cjs/**/*"
   ],
   "repository": "https://github.com/freshollie/apollo-bus-link",
