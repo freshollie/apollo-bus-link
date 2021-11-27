@@ -1,6 +1,6 @@
 {
   "internal": true,
-  "main": "./dist/cjs/electron.js",
-  "module": "./dist/esm/electron.js",
-  "typings": "./dist/cjs/electron.d.ts"
+  "main": "../dist/cjs/electron.js",
+  "module": "../dist/esm/electron.js",
+  "typings": "../dist/cjs/electron.d.ts"
 }
