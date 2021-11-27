@@ -1,11 +1,11 @@
 import { ApolloClient, gql, InMemoryCache } from "@apollo/client/core";
 // eslint-disable-next-line import/extensions
 import TestWorker from "./test.worker.ts";
-import { createBusWebWorkerLink } from "../../src";
+import { createWebWorkerBusLink } from "../../src";
 import { BackendArgs } from "../testSchema";
 
 const worker = new TestWorker();
-const link = createBusWebWorkerLink<BackendArgs>(worker);
+const link = createWebWorkerBusLink<BackendArgs>(worker);
 
 describe("When used in a web worker", () => {
   it("should execute apollo queries", async () => {

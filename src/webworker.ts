@@ -12,7 +12,7 @@ export const webWorkerBus =
       request(event.data, (response) => workerSelf.postMessage(response));
   };
 
-export const createBusWebWorkerLink = <A = DefaultInitArgs>(
+export const createWebWorkerBusLink = <A = DefaultInitArgs>(
   worker: Worker
 ): BusLink<A> =>
   new BusLink({
