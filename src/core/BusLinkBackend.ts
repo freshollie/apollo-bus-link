@@ -44,15 +44,29 @@ export type MessageBusBackend<A = DefaultInitArgs> = {
   listen: () => void;
 };
 
+type BusLinkOptions<A> =
+  | {
+      registerBus: RegisterBusFunction<A>;
+      createExecutor: (args: A) => Promise<ApolloLink> | ApolloLink;
+    }
+  | {
+      registerBus: RegisterBusFunction<A>;
+      executor: ApolloLink;
+    };
+
 // eslint-disable-next-line import/prefer-default-export
-export const createBusLinkBackend = <A = DefaultInitArgs>(options: {
-  registerBus: RegisterBusFunction<A>;
-  createExecutor: (args: A) => Promise<ApolloLink> | ApolloLink;
-}): MessageBusBackend<A> => {
-  let messageHandler: BusLinkHandler | undefined;
+export const createBusLinkBackend = <A = DefaultInitArgs>(
+  options: BusLinkOptions<A>
+): MessageBusBackend<A> => {
+  let messageHandler =
+    "executor" in options ? createBusLinkHandler(options.executor) : undefined;
 
   const initialise = async (args: A): Promise<void> => {
-    messageHandler = createBusLinkHandler(await options.createExecutor(args));
+    messageHandler = createBusLinkHandler(
+      await ("createExecutor" in options
+        ? options.createExecutor(args)
+        : options.executor)
+    );
   };
 
   return {

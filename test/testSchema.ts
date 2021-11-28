@@ -35,7 +35,7 @@ const schema = makeExecutableSchema({
 export type BackendArgs = {
   overrideResponse?: number[];
 } | void;
-export const createTestExecutor = async (args: BackendArgs) =>
+export const createTestExecutor = (args: BackendArgs) =>
   createSchemaExecutor({
     schema,
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition

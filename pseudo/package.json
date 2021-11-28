@@ -1,0 +1,6 @@
+{
+  "internal": true,
+  "main": "../dist/cjs/pseudo.js",
+  "module": "../dist/esm/pseudo.js",
+  "typings": "../dist/cjs/pseudo.d.ts"
+}
