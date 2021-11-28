@@ -46,7 +46,8 @@
     "dist/cjs/**/*",
     "electron",
     "webworker",
-    "core"
+    "core",
+    "pseudo"
   ],
   "repository": "https://github.com/freshollie/apollo-bus-link",
   "author": "Oliver Bell <freshollie@gmail.com>",
