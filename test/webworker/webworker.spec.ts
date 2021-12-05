@@ -68,4 +68,11 @@ describe("When used in a web worker", () => {
     });
     expect(returnedData).toEqual([2, 3, 4, 5]);
   });
+
+  it("should not crash with requests of wrong type", async () => {
+    await link.initialiseBackend();
+
+    worker.postMessage({ type: "some random type" });
+    expect(1).toBe(1);
+  });
 });

@@ -35,26 +35,29 @@ export default class MessengeBusLink<A = DefaultInitArgs> extends ApolloLink {
       return undefined;
     }
 
-    const { id, type, data } = message.args;
-    if (!this.observers.has(id)) {
-      return undefined;
-    }
-
-    const observer = this.observers.get(id);
-    switch (type) {
-      case "data":
-        // Data should exist if the type is data
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        return observer?.next?.(data!);
-
-      case "error": {
-        this.observers.delete(id);
-        return observer?.error?.(deserializeError(data));
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    if (message.type === "response") {
+      const { id, type, data } = message.args;
+      if (!this.observers.has(id)) {
+        return undefined;
       }
 
-      case "complete": {
-        this.observers.delete(id);
-        return observer?.complete?.();
+      const observer = this.observers.get(id);
+      switch (type) {
+        case "data":
+          // Data should exist if the type is data
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          return observer?.next?.(data!);
+
+        case "error": {
+          this.observers.delete(id);
+          return observer?.error?.(deserializeError(data));
+        }
+
+        case "complete": {
+          this.observers.delete(id);
+          return observer?.complete?.();
+        }
       }
     }
 

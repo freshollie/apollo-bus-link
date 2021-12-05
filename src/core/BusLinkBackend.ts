@@ -79,17 +79,20 @@ export const createBusLinkBackend = <A = DefaultInitArgs>(
           return;
         }
 
-        messageHandler?.onMessage({
-          request: request.args.request,
-          onResponse: (type, data) => {
-            const response: GraphqlMessageResponse = {
-              id: request.args.id,
-              type,
-              data,
-            };
-            respond({ type: "response", args: response });
-          },
-        });
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        if (request.type === "request") {
+          messageHandler?.onMessage({
+            request: request.args.request,
+            onResponse: (type, data) => {
+              const response: GraphqlMessageResponse = {
+                id: request.args.id,
+                type,
+                data,
+              };
+              respond({ type: "response", args: response });
+            },
+          });
+        }
       });
     },
   };
