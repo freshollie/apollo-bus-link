@@ -8,8 +8,9 @@ export const webWorkerBus =
   ): RegisterBusFunction<A> =>
   (request) => {
     // eslint-disable-next-line no-param-reassign
-    workerSelf.onmessage = (event) =>
-      request(event.data, (response) => workerSelf.postMessage(response));
+    workerSelf.addEventListener("message", (event) =>
+      request(event.data, (response) => workerSelf.postMessage(response))
+    );
   };
 
 export const createWebWorkerBusLink = <A = DefaultInitArgs>(
