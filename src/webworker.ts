@@ -7,7 +7,6 @@ export const webWorkerBus =
     workerSelf: typeof globalThis
   ): RegisterBusFunction<A> =>
   (request) => {
-    // eslint-disable-next-line no-param-reassign
     workerSelf.addEventListener("message", (event) =>
       request(event.data, (response) => workerSelf.postMessage(response))
     );
@@ -19,7 +18,6 @@ export const createWebWorkerBusLink = <A = DefaultInitArgs>(
   new BusLink({
     requestHandler: (request) => worker.postMessage(request),
     registerResponseHandler: (handler) => {
-      // eslint-disable-next-line no-param-reassign
-      worker.onmessage = (event) => handler(event.data);
+      worker.addEventListener("message", (event) => handler(event.data));
     },
   });
